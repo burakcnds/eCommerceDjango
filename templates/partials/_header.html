@@ -1,0 +1,176 @@
+{% load static %}
+<!--! header start  -->
+ <header>
+    
+
+   
+    <div class="header-row">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="header-mobile">
+            <i class="bi bi-list" id="btn-menu"></i>
+          </div>
+          <div class="header-left">
+            <a href="/"   class="logo active">BCC</a>
+          </div>
+          <div class="header-center" id="sidebar">
+            <nav class="navigation">
+              <ul class="menu-list">
+                <li class="menu-list-item">
+                  <a href="index.html" class="menu-link active ">
+                    Erkek
+                    <i class="bi bi-chevron-down"></i>
+                  </a>
+                
+                <div class="menu-dropdown-wrapper">
+                  <ul class="menu-dropdown-content">
+                    {% for category in category %}
+                    <li>
+                       <a href="{% url 'products' category.slug %}">
+                          <img src="{{ category.image.url }}" alt="" class="category-image">
+                          <span class="category-title">{{ category.name }}</span>
+                       </a>
+                    </li>
+                 {% endfor %}
+                      <li>
+                    
+                     
+                  </ul>
+              </div>
+               
+                 
+                </li>
+               
+                <li class="menu-list-item megamenu-wrapper">
+                  <a href="kadinIndex.html" class="menu-link">
+                    Kadın
+                    <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <div class="menu-dropdown-wrapper">
+                    <ul class="menu-dropdown-content">
+                        <li>
+                          <a href="kadinCeket.html">
+                            <img src="{% static 'img/kadinKategori/ceket.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> Ceket </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/kadinKategori/elbise.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> Elbise </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/kadinKategori/jean.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> Jean </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/kadinKategori/kazak.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> Kazak </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/kadinKategori/pantolon.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> Pantolon </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="{% static 'img/kadinKategori/tisort.jpg' %}" alt="" class="category-image">
+                            <span class="category-title"> T-Shirt </span>
+                          </a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                    <div class="menu-dropdown-megamenu">
+                      <div class="megamenu-links">
+                          
+                          <div class="megamenu-products">
+                          
+                          <div class="megamenu-products">
+                           
+                         
+                          </div>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </li>
+               
+                <li class="menu-list-item">
+                  <a href="#" class="menu-link">
+                    İletişim
+                    
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <i class="bi-x-circle" id="close-sidebar"></i>
+          </div>
+          
+          
+          <div class="header-right">
+            <div class="header-right-links ">
+              {% if request.user.is_authenticated %}
+              <div class="acil">
+                <a href="{}" class="header-account menu-link">
+                  <i class="bi bi-person"></i>
+                </a>
+               
+                <div class="menu-dropdown-wrapper2">
+                  
+                  <ul class="menu-dropdown-content d-flex flex-column ">
+                      <li>
+                        <a href="">
+                          Profil Ayarları
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          Siparişlerim
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{% url 'userLogout' %}">
+                          Çıkış Yap
+                        </a>
+                      </li>
+               
+                     
+                  </ul>
+              </div>
+              </div>
+              {% else %}
+             
+                <a href="{% url 'account' %}" class="header-account menu-link">
+                  <i class="bi bi-person-plus fs-4"></i>
+                </a>
+               
+               
+             
+              
+            {% endif %}
+              <button class="toggle-button">
+                <i class="bi bi-search"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-heart"></i>
+              </a>
+              <div class="header-cart">
+                <a href="{% url "sepet" %}" class="header-cart-link">
+                  <i class="bi bi-bag"></i>
+                  <span class="header-cart-count">0</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--! header end  -->

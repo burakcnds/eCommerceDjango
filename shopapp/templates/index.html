@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>BCC - Erkek</title>
+{% endblock title %}
+
+
+{% block content %}
+<!-- your_template.html -->
+{% include 'partials/_header.html' with categories=categories %}
+
+{% include "partials/_slider.html" %}
+
+{% include "partials/_manCategory.html" with categories=categories  %}
+
+{% include "partials/_discountProducts.html" %}
+ 
+
+
+
+
+{% include "partials/_manStils.html" %}
+
+{% include "partials/_policy.html" %}
+{% include "partials/_footer.html" %}
+{% endblock content %}

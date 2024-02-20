@@ -1,0 +1,24 @@
+{% load static %}
+
+<!--! categories start  -->
+<section class="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>İlginizi çekebilicek kategoriler</h2>
+        <p>Yeni koleksiyonlar ve çok daha fazlası</p>
+      </div>
+      <ul class="category-list">
+      
+        {% for category in category %}
+        <li class="category-item"> 
+           <a href="{% url 'products' category.slug %}">
+              <img src="{{ category.image.url }}" alt="" class="category-image">
+              <span class="category-title">{{ category.name }}</span>
+           </a>
+        </li>
+     {% endfor %}
+   
+      </ul>
+    </div>
+  </section>
+  <!--! categories end  -->

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Deneme</title>
+{% endblock title %}
+
+
+{% block content %}
+<!-- your_template.html -->
+{% include 'partials/_header.html' with categories=categories %}
+
+{% include "partials/_productDetail.html" %}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+{% include "partials/_footer.html" %}
+{% endblock content %}

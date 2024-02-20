@@ -1,0 +1,63 @@
+{% load static %}
+
+   <!--! slider start   -->
+   <section class="slider">
+    <div class="slider-elements">
+      <div class="slider-item fade">
+        <div class="slider-image">
+          <img src="{% static 'img/slider/erkekSlider1.avif' %}
+          " class="img-fluid" alt="">
+        </div>
+        <div class="container">
+          <p class="slider-title">WINTER IS COMING</p>
+          <h2 class="slider-heading">Save up to 40%</h2>
+          <a href="#" class="button btn btn-lg btn-dark mt">Explore Now</a>
+        </div>
+      </div>
+      <div class="slider-item fade">
+        <div class="slider-image">
+          <img src="{% static 'img/slider/erkekSlider2.avif' %}
+          " class="img-fluid" alt="">
+        </div>
+        <div class="container">
+          <p class="slider-title">WINTER IS COMING</p>
+          <h2 class="slider-heading">Save up to 40%</h2>
+          <a href="#" class="button btn btn-lg btn-primary mt">Explore Now</a>
+        </div>
+      </div>
+      <div class="slider-item fade">
+        <div class="slider-image">
+          <img src="{% static 'img/slider/erkekSliderDeneme1.jpeg' %}
+          " class="img-fluid" alt="">
+        </div>
+        <div class="container">
+          <p class="slider-title">WINTER IS COMING</p>
+          <h2 class="slider-heading">Save up to 40%</h2>
+          <a href="#" class="button btn btn-lg btn-close-white mt">Explore Now</a>
+        </div>
+      </div>
+      
+      <div class="slider-buttons">
+        <button onclick="plusSlide(-1)">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button onclick="plusSlide(1)">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+      <div class="slider-dots">
+        <button class="slider-dot active" onclick="currentSlide(1)">
+          <span></span>
+        </button>
+        <button class="slider-dot" onclick="currentSlide(2)">
+          <span></span>
+        </button>
+        <button class="slider-dot" onclick="currentSlide(3)">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!--! slider end   -->

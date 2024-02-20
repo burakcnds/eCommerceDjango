@@ -1,0 +1,310 @@
+   {% load static %}
+   <!--! products start  -->
+   <section class="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>İndirimdeki Ürünler</h2>
+        <p>Kış koleksiyonlarında indirimi kaçırma</p>
+      </div>
+      <div class="product-wrapper product-carousel">
+        <div class="glide__track" data-glide-el="track">
+
+          <ul class="product-list glide__slides">
+            {% for i in discountProduct %}
+            <li class="product-item glide__slide">
+              <div class="product-image">
+            <a href="#">
+              <img src="{{i.image1.url}}" alt="" class="img1">
+              <img src="{{i.image3.url}}" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title"> {{i.name}} </a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-half"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price"> {{i.d_price  }}TL </strong>
+              <span class="old-price"> {{i.price}}TL </span>
+            </div>
+            <span class="product-discount"> {{i.d_rate}}%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="./urunDetay.html">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+        <!-- <li class="product-item glide__slide">
+          <div class="product-image">
+            <a href="#">
+              <img src="img/erkekSale/erkekSale2:1.jpg" alt="" class="img1">
+              <img src="img/erkekSale/erkekSale2:3.jpg" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title">Yan şeritli interlok pantolon</a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price">550 TL</strong>
+              <span class="old-price">900 TL</span>
+            </div>
+            <span class="product-discount">-40%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-item glide__slide">
+          <div class="product-image">
+            <a href="#">
+              <img src="img/erkekSale/erkekSale3:1.jpg" alt="" class="img1">
+              <img src="img/erkekSale/erkekSale3:3.jpg" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title">Tupac bisiklet yaka sweatshirt</a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-half"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price">690 TL</strong>
+              <span class="old-price">990 TL</span>
+            </div>
+            <span class="product-discount">-30%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-item glide__slide">
+          <div class="product-image">
+            <a href="#">
+              <img src="img/erkekSale/erkekSale5:1.jpg" alt="" class="img1">
+              <img src="img/erkekSale/erkekSale5:3.jpg" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title">Uzun kollu süet görünümlü crop gömlek</a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price">1080 TL</strong>
+              <span class="old-price">900 TL</span>
+            </div>
+            <span class="product-discount">-15%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-item glide__slide">
+          <div class="product-image">
+            <a href="#">
+              <img src="img/erkekSale/erkekSale5:1.jpg" alt="" class="img1">
+              <img src="img/erkekSale/erkekSale5:3.jpg" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title">Uzun kollu süet görünümlü crop gömlek</a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price">1080 TL</strong>
+              <span class="old-price">900 TL</span>
+            </div>
+            <span class="product-discount">-15%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-item glide__slide">
+          <div class="product-image">
+            <a href="#">
+              <img src="img/erkekSale/erkekSale5:1.jpg" alt="" class="img1">
+              <img src="img/erkekSale/erkekSale5:3.jpg" alt="" class="img2">
+            </a>
+          </div>
+          <div class="product-info">
+            <a href="$" class="product-title">Uzun kollu süet görünümlü crop gömlek</a>
+            <ul class="product-star">
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star-fill"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+              <li>
+                <i class="bi bi-star"></i>
+              </li>
+            </ul>
+            <div class="product-prices">
+              <strong class="new-price">1080 TL</strong>
+              <span class="old-price">900 TL</span>
+            </div>
+            <span class="product-discount">-15%</span>
+            <div class="product-links">
+              <button>
+                <i class="bi bi-basket-fill"></i>
+              </button>
+              <button>
+                <i class="bi bi-heart-fill"></i>
+              </button>
+              <a href="#">
+                <i class="bi bi-eye-fill"></i> 
+              </a>
+              <a href="#">
+                <i class="bi bi-share-fill"></i> 
+              </a>
+            </div>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+   </div>
+    </div>
+  </section>
+  <!--! products end  -->

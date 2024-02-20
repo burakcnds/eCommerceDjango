@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Hesap</title>
+{% endblock title %}
+
+
+{% block content %}
+<!-- your_template.html -->
+{% include 'partials/_header.html' with categories=categories %}
+
+
+        <!--! account start  -->
+        <section class="account-page">
+            <div class="container">
+                <div class="account-wrapper">
+                    <div class="account-column">
+                        <h2>Giriş yap</h2>
+                        <form method="POST" action="{% url 'account' %}">
+                            {% csrf_token %}
+                            <div>
+                                <label>
+                                    
+                                    <span>Kullanıcı adı veya mail adresi <span class="required">*</span></span>
+                                    <input name="username" type="text">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Şifre <span class="required">*</span></span>
+                                    <input name="password" type="password">
+                                </label>
+                            </div>
+                            <p class="remember">
+                                <label>
+                                    <input type="checkbox">
+                                    <span>Beni hatırla</span>
+                                </label>
+                                <button type="submit" name="login" class="btn btn-sm">Giriş yap</button>
+                            </p>
+                            <a href="#" class="form-link text-decoration-underline">Şifreni mi unuttun?</a>
+                        </form>
+                    </div>
+                    <div class="account-column">
+                        <h2>Kayıt Ol</h2>
+                        <form action="{% url 'account' %}" method="POST">
+                            {% csrf_token %}
+                            <div>
+                                <label>
+                                    <span>Kullanıcı adı <span class="required">*</span></span>
+                                    <input name="username" type="text">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Mail adresi<span class="required">*</span></span>
+                                    <input name="email" type="email">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Şifre <span class="required">*</span></span>
+                                    <input name="password1" type="password">
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <span>Şifre Doğrula<span class="required">*</span></span>
+                                    <input name="password2" type="password">
+                                </label>
+                            </div>
+                            <div class="privacy-policy-text remember">
+                                <p>
+                                  Kişisel verileriniz bu web sitesindeki deneyiminizi desteklemek,
+                                  hesabınıza erişimi yönetmek ve belgemizde açıklanan diğer amaçlar için <a
+                                        href="#" class="text-decoration-underline">
+                                        Gizlilik Politikası.</a>
+                                </p>
+                                <button type="submit" name="signup" class="btn btn-sm">Kayıt ol</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--! account end  -->
+        <hr>
+
+ 
+
+
+
+
+
+
+{% include "partials/_policy.html" %}
+{% include "partials/_footer.html" %}
+{% endblock content %}

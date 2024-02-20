@@ -1,0 +1,108 @@
+  {% load static %}
+  <!--! single product start  -->
+  <section class="single-product">
+    <div class="container">
+        <div class="single-product-wrapper">
+            <!-- breadcrumb start -->
+            <div class="single-topbar">
+                <nav class="breadcrumb">
+                    <ul>
+                        <li><a href="index.html">Erkek</a></li>
+                        <li><a href="erkekSweatshirt.html"> {{slug_product.category}} </a></li>
+                        
+                        <li> {{slug_product.name}} </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- breadcrumb end -->
+             <!-- site main start -->
+             <div class="single-content">
+                <main class="site-main">
+                    <div class="product-gallery">
+                        <div class="single-image-wrapper">
+                            <img src="{{slug_product.image1.url}}" alt="" >
+                        </div>
+                        <div class="product-thumb">
+                            <ol class="gallery-thumbs">
+                                <li>
+                                    <img src="{{slug_product.image1.url}}" alt="" class="img-fluid active">
+                                </li>
+                                <li>
+                                    <img src=" {{slug_product.image2.url}} " alt="" class="img-fluid">
+                                </li>
+                                <li>
+                                    <img src="{{slug_product.image3.url}}" alt="" class="img-fluid">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h1 class="product-title">
+                            {{slug_product.name}}
+                        </h1>
+                      
+                        <div class="product-price">
+                            <!-- <s>$165</s> -->
+                            <strong> {{slug_product.price}} TL </strong>
+                        </div>
+                        <p class="product-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <form class="variations-form">
+                            <div class="variations">
+                               
+                                <div class="values">
+                                    <div class="values-label">
+                                        <span>Size</span>
+                                    </div>
+                                    <div class="values-list">
+                                        <span class="active">XS</span>
+                                        <span>S</span>
+                                        <span>M</span>
+                                        <span>L</span>
+                                        <span>XL</span>
+                                    </div>
+                                </div>
+                                <div class="cart-button">
+                                    <input type="number" value="1" min="1">
+                                    <button class="btn btn-lg btn-primary">Sepete ekle</button>
+                                </div>
+                                <div class="product-extra-buttons">
+                                    <a href="#">
+                                        <i class="bi bi-globe"></i>
+                                        <span>Beden tablosu</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="bi bi-heart"></i>
+                                        <span>Favorilere ekle</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="bi bi-share"></i>
+                                        <span>Ürünü paylaş</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="divider"></div>
+                        <div class="product-meta">
+                           
+                            <div class="product-categories">
+                                <span>Kategori:</span>
+                                <strong>{{slug_product.category}} , Erkek</strong>
+                            </div>
+                            <div class="product-tags">
+                                <span>Etiketler:</span>
+                                <a href="#">Siyah</a>
+                                ,
+                                <a href="#">Gri</a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- site main end -->
+        </div>
+    </div>
+</section>
+<!--! single product end  -->

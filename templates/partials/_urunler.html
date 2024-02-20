@@ -1,0 +1,85 @@
+{% load static %}
+
+
+  <!-- ! content start -->
+  <section class="content">
+    <div class="container">
+        <div class="content-head">
+            <h1> {{slug_category}} </h1>
+            <div class="turler">
+                <a class="btn-no btn-dark" href="#">Tümü</a>
+                <a class="btn-no" href="#">Basic</a>
+                <a class="btn-no" href="#">Baskılı</a>
+                <a class="btn-no" href="#">Kapüşonlu</a>
+                <a class="btn-no" href="#">Oversize</a>
+            </div>
+        </div>
+        <div class="content-main">
+          {% if products.count == 0 %}
+          <div class="text-center border border-1 border-black rounded-3 mt-5 mb-5">
+            <p class=""> STOKLARIMIZ ŞU ANDA GÜNCELLENMEKTEDİR TAKİPTE KALINIZ!</p>
+          </div>
+          {% else %}
+            <div class="content-card">
+                <div id="products" class="products products-new">
+               
+                  
+                    {% for i in products %}
+                    <div class="product-wrapper">
+                       <ul class="product-list">
+                          <li class="product-item id=${element.id}">
+                            <div class="product-image">
+                              <a href="#">
+                                <img src="{{i.image1.url}}" alt="" class="img1">
+                                <img src="{{i.image3.url}}" alt="" class="img2">
+                              </a>
+                            </div>
+                            <div class="product-info">
+                              <a href="$" class="product-title"> {{i.name}} </a>
+                              <div class="product-prices">
+                                <strong class="new-price text-black"> {{i.price}} TL </strong>
+                              </div>
+                              <div class="product-links">
+                                <button class="add-to-cart "> 
+                                  <i class="bi bi-basket-fill"></i>
+                                </button>
+                                <button>
+                                  <i class="bi bi-heart-fill"></i>
+                                </button>
+
+                               
+                                {% for product in products %}
+                                <a href="{% url 'productsDetail' product.slug%}">
+                                  {% endfor %}
+                                  <i class="bi bi-eye-fill"></i> 
+                                </a>
+                                <a href="#">
+                                  <i class="bi bi-share-fill"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+
+                        </div>      
+                        {% endfor %}
+                        {% endif %}
+            </div>
+            </div>
+        </div>
+        <div class="content-bottom d-flex justify-content-center ">
+           <div>
+            <div class="text-center me-1 border border-1 border-black rounded-3 ">
+              <p>Toplam <span>{{ products.count }}</span> / <span>{{ products_count }}</span> </p>
+            </div>
+           
+            <!-- <div class="d-flex justify-content-center">
+                <span class="bar"> <span class="html"></span> </span>
+            </div> -->
+            <div class="mt-2">
+                <a class="btn btn-dark" href="#">Daha fazla ürün yükle</a>
+            </div>
+           </div>
+        </div>
+    </div>
+  </section>
+  <!-- ! content end -->
